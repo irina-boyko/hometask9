@@ -1,0 +1,19 @@
+Promises появились как один из способов избежать callback hell-а.
+    Promise - это объект, который имеет три состояния: ожидание, успешное выполнение, выполнено с ошибкой.
+    На Promise можно повесить callback функции, которые сработают в зависимости от состояния Promise
+(onFulfilled – срабатывают, когда promise в состоянии «выполнен успешно».
+onRejected – срабатывают, когда promise в состоянии «выполнен с ошибкой».)
+Это аналогично тому, если бы мы передали эти две callback функции в параметры основной. Пример промиса:
+
+let myPromise = new Promise ((resolve, reject) => {
+    if(true) {
+        resolve('Operation was made successfully');
+    } else {
+        reject('Oops something went wrong');
+    }
+});
+myPromise.then(res => {
+    console.log(res);
+}).catch(rej => {
+    console.log(rej);
+});
