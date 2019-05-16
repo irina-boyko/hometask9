@@ -1,6 +1,6 @@
-(function (easyHA) {
+let easyHA =(function () {
 
-    easyHA.switchKeysAndValues = function(object) {
+    let switchKeysAndValues = function(object) {
         let keys = Object.keys(object);
         let values = Object.values(object);
         let newObject = {};
@@ -10,7 +10,7 @@
         return (newObject);
     };
 
-    easyHA.createObjectFromTwoArrays = function(array1, array2) {
+    let createObjectFromTwoArrays = function(array1, array2) {
         let newObject = {};
         for (let i = 0; i < array1.length && i < array2.length; i++) {
             newObject[array1[i]] = array2[i];
@@ -18,7 +18,7 @@
         return (newObject);
     };
 
-    easyHA.nonrepeatedArray = function(array) {
+    let nonrepeatedArray = function(array) {
         let object = {};
         for (let i = 0; i < array.length; i++) {
             let str = array[i];
@@ -27,4 +27,9 @@
         let newArray = Object.keys(object);
         return newArray;
     };
-}(easyHA));
+    return {
+        switchKeysAndValues: switchKeysAndValues,
+        createObjectFromTwoArrays: createObjectFromTwoArrays,
+        nonrepeatedArray: nonrepeatedArray
+    }
+}());
